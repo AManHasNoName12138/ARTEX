@@ -1,0 +1,180 @@
+{
+  "formatVersion": 1,
+  "generatedAt": "2026-11-07T00:53:02.118941Z",
+  "source": {
+    "repository": "https://github.com/AManHasNoName12138/ARTEX",
+    "gitCommitHash": "ee413324c868ec09d5ccbae31d04da7a6e24076d",
+    "branch": "study-notes"
+  },
+  "generator": {
+    "repository": "https://github.com/Egonex-AI/Understand-Anything",
+    "gitCommitHash": "4e6d3299017a7432da15957874992837a315c5b4",
+    "pluginVersion": "2.9.8",
+    "skill": "understand",
+    "outputLanguage": "zh"
+  },
+  "pipeline": [
+    "scan-project.mjs",
+    "extract-import-map.mjs",
+    "compute-batches.mjs",
+    "extract-structure.mjs + 中文语义分析",
+    "merge-batch-graphs.py",
+    "assemble-reviewer",
+    "architecture-analyzer",
+    "tour-builder",
+    "官方内联校验 + KnowledgeGraphSchema",
+    "build-fingerprints.mjs"
+  ],
+  "coverage": {
+    "files": 599,
+    "scannedFiles": 599,
+    "nodes": 4627,
+    "edges": 25026,
+    "expectedImports": 15819,
+    "layers": 10,
+    "tourSteps": 15,
+    "nodeTypes": {
+      "file": 563,
+      "function": 3522,
+      "class": 438,
+      "config": 12,
+      "service": 7,
+      "pipeline": 7,
+      "document": 19,
+      "table": 59
+    },
+    "edgeTypes": {
+      "contains": 4094,
+      "exports": 2618,
+      "imports": 15819,
+      "calls": 2276,
+      "tested_by": 121,
+      "depends_on": 27,
+      "related": 42,
+      "inherits": 5,
+      "configures": 7,
+      "deploys": 3,
+      "triggers": 1,
+      "documents": 13
+    },
+    "fileCategories": {
+      "infra": 5,
+      "config": 11,
+      "code": 551,
+      "docs": 19,
+      "script": 7,
+      "data": 1,
+      "markup": 5
+    },
+    "orphanNodes": 19,
+    "batches": 27,
+    "totalSourceLines": 168709,
+    "fingerprintFiles": 599,
+    "unreadableFiles": 0,
+    "excludedGeneratedDirectory": ".ua/"
+  },
+  "validation": {
+    "passed": true,
+    "checks": [
+      "official KnowledgeGraphSchema",
+      "unique IDs and edges",
+      "relative source paths and line ranges",
+      "complete scan inventory coverage",
+      "complete deterministic import coverage",
+      "edge endpoint integrity",
+      "layer membership",
+      "guided tour references",
+      "fingerprint inventory coverage"
+    ],
+    "issues": [],
+    "orphanNodeIds": [
+      "document:CHANGELOG.md",
+      "file:dev.sh",
+      "config:go.mod",
+      "config:go.sum",
+      "document:skills/playwright-cli/references/element-attributes.md",
+      "document:skills/playwright-cli/references/running-code.md",
+      "document:skills/playwright-cli/references/storage-state.md",
+      "document:skills/playwright-cli/references/tracing.md",
+      "document:skills/playwright-cli/references/video-recording.md",
+      "file:.gitattributes",
+      "file:screenshots/.gitkeep",
+      "document:skills/api-recon/reference.md",
+      "config:skills/api-recon/scripts/package.json",
+      "document:skills/playwright-cli/SKILL.md",
+      "document:skills/scopesentry/SKILL.md",
+      "file:web/.husky/pre-commit",
+      "file:web/next.config.mjs",
+      "file:web/postcss.config.mjs",
+      "file:web/src/styles/flag-icons/flags.css"
+    ]
+  },
+  "batchingWarnings": {
+    "largeCommunitiesSplit": 4,
+    "neighborContextsTruncated": 230,
+    "detail": "大社区按文件顺序拆批；部分邻居语义上下文超过 50 个而被裁剪。完整 importMap 未裁剪，全部内部 import 关系已逐条验证。"
+  },
+  "parserFallbackFiles": [
+    ".dockerignore",
+    ".gitattributes",
+    "go.mod",
+    "go.sum",
+    "screenshots/.gitkeep",
+    "start.bat",
+    "web/.husky/pre-commit",
+    "web/src/app/globals.css",
+    "web/src/styles/flag-icons/flags.css",
+    "web/src/styles/presets/brutalist.css",
+    "web/src/styles/presets/soft-pop.css",
+    "web/src/styles/presets/tangerine.css"
+  ],
+  "limitations": [
+    "parserFallbackFiles 中的文件由语义阶段阅读原文补充文件说明及适用的脚本符号；不表示文件缺失。",
+    "Go 包 import 由官方解析器展开为包内文件关系；imports 不等同于逐函数运行时调用。",
+    "calls 仅包含源码证据充分的调用关系；动态分派、反射与外部依赖不构成完整运行时调用图。",
+    "TypeScript 导出接口等官方基础提取未输出的声明，在语义阶段依据源码补充。"
+  ],
+  "artifacts": {
+    "knowledge-graph.json": {
+      "sha256": "de64f0c391d141cd3b6caa0aa3d7ed3dbbe630172ab314eac2139df9329bccad"
+    },
+    "fingerprints.json": {
+      "sha256": "c0dacf8d0fa3ba7faa9bec76595dbfddb9e7e84984477f492ef7fdb84862af61"
+    }
+  },
+  "dashboardSmokeTest": {
+    "passed": true,
+    "viewer": "Understand-Anything dashboard from 4e6d3299017a7432da15957874992837a315c5b4",
+    "checks": [
+      {
+        "endpoint": "/",
+        "status": 200,
+        "bytes": 960
+      },
+      {
+        "endpoint": "/knowledge-graph.json",
+        "status": 200,
+        "bytes": 5331469
+      },
+      {
+        "endpoint": "/config.json",
+        "status": 200,
+        "bytes": 42
+      },
+      {
+        "endpoint": "/meta.json",
+        "status": 200,
+        "bytes": 145
+      },
+      {
+        "endpoint": "/file-content.json?path=cmd%2Fartex%2Fmain.go",
+        "status": 200,
+        "bytes": 5850
+      }
+    ]
+  },
+  "executionNotes": [
+    "文件语义分析在多次会话中断后从已保存的结构与语义材料继续，27 个批次全部完成。",
+    "合并审查、架构分层与导览按官方角色定义由主会话完成；没有跳过的分析批次。"
+  ]
+}

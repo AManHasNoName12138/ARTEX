@@ -1,0 +1,104 @@
+# .understandignore — patterns for files/dirs to exclude from analysis
+# Syntax: same as .gitignore (globs, # comments, ! negation, trailing / for dirs)
+# Lines below are suggestions — uncomment to activate.
+# Use ! prefix to force-include something excluded by defaults.
+#
+# Built-in defaults (always excluded unless negated):
+#   node_modules/, .git/, dist/, build/, obj/, *.lock, *.min.js, etc.
+#
+
+# Understand-Anything generated artifacts are outside the source inventory.
+.ua/
+
+# --- From .gitignore (uncomment to exclude) ---
+
+# /data/
+# *.db
+# *.db-wal
+# *.db-shm
+# config.json
+# scheduler_state.json
+# *.pyc
+# *.pyo
+# web/node_modules/
+# web/.next/
+# web/tsconfig.tsbuildinfo
+# web/next-env.d.ts
+# *.local
+# .playwright-mcp/
+# .playwright-cli/
+# *.swp
+# *.swo
+# /docs/
+# .DS_Store
+# Thumbs.db
+# .claude/
+# /artex
+# /artex.new
+# /artex.new.sha256
+# /artex.old
+# /artex.failed
+# /artex.upgrade.json
+# /server/webui/dist/
+# /dist/
+# /jwt.key
+# .env
+# *-events.csv
+# /bench/
+# /Dockerfile.bench
+# /Dockerfile.bench.v2
+
+# --- Detected directories (uncomment to exclude) ---
+
+# docs/
+
+# --- Test file patterns (uncomment to exclude) ---
+
+# JS / TS
+# *.test.*
+# *.spec.*
+# *.snap
+# C# / .NET
+# **/*Tests.cs
+# **/*Test.cs
+# **/*Fixture.cs
+# **/*.Tests.csproj
+# Java / Kotlin
+# **/src/test/**
+# **/*Test.java
+# **/*IT.java
+# **/*Spec.kt
+# Go
+# **/*_test.go
+# C++
+# **/*_test.cc
+# **/*_test.cpp
+# **/*_test.cxx
+# **/*Test.cc
+# **/*Test.cpp
+# **/*_unittest.cc
+# **/*_unittest.cpp
+# **/*_browsertest.cc
+# **/*_benchmark.cc
+# **/*Benchmark.cpp
+# Python
+# **/test_*.py
+# **/*_test.py
+# **/tests.py
+# **/conftest.py
+# Rust
+# **/tests.rs
+# **/test_*.rs
+# **/*_test.rs
+# **/bench_*.rs
+# **/*_bench.rs
+# Ruby
+# **/*_spec.rb
+# **/*_test.rb
+# **/test_*.rb
+# **/spec_helper.rb
+# **/test_helper.rb
+# **/rails_helper.rb
+# Swift
+# **/Tests/**/*.swift
+# **/Specs/**/*.swift

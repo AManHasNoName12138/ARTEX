@@ -58,3 +58,10 @@ Thumbs.db
 /bench/
 /Dockerfile.bench
 /Dockerfile.bench.v2
+
+# Understand-Anything graph: commit shared data, keep local scratch untracked.
+!/.ua/config.json
+/.ua/intermediate/
+/.ua/tmp/
+/.ua/.trash-*/
+/.ua/diff-overlay.json
